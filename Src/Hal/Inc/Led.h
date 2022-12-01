@@ -2,42 +2,58 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  IntCrtl.h
- *       Module:  IntCrtl
+ *         File:  <Write File Name>
+ *       Module:  -
  *
- *  Description:  header file for IntCrtl Module    
+ *  Description:  <Write File DESCRIPTION here>     
  *  
  *********************************************************************************************************************/
-#ifndef INTCTRL_H
-#define INTCTRL_H
+#ifndef LED_H
+#define LED_H
+
 
 /**********************************************************************************************************************
- * INCLUDES
+ *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
-#include "IntCtrl_Types.h" /* enclosed is cfg.h*/
 
+#define LED_PORT   PORTF
+#define LED_PIN    DIO_PIN_2
+
+/**********************************************************************************************************************
+ *  GLOBAL FUNCTION MACROS
+ *********************************************************************************************************************/
 
  
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
- 
- 
-/******************************************************************************
-* \Syntax          : void IntCrtl_Init(void)                                      
-* \Description     : initialize Nvic\SCB Module by passing the Configuration 
-*                    into Nvic\SCB registers                                    
+
+ /******************************************************************************
+* \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)        
+* \Description     : Describe this service                                    
 *                                                                             
 * \Sync\Async      : Synchronous                                               
 * \Reentrancy      : Non Reentrant                                             
-* \Parameters (in) : None                     
+* \Parameters (in) : None              
 * \Parameters (out): None                                                      
-* \Return value:   : None
+* \Return value:   : None                                 
 *******************************************************************************/
-void IntCrtl_Init(void);
+void LedOn(void);
+
+/******************************************************************************
+* \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)        
+* \Description     : Describe this service                                    
+*                                                                             
+* \Sync\Async      : Synchronous                                               
+* \Reentrancy      : Non Reentrant                                             
+* \Parameters (in) : None              
+* \Parameters (out): None                                                      
+* \Return value:   : None                                 
+*******************************************************************************/
+void LedOff(void);
  
-#endif  /* INTCTRL_H */
+#endif  /* FILE_NAME_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: IntCtrl.h
+ *  END OF FILE: Std_Types.h
  *********************************************************************************************************************/

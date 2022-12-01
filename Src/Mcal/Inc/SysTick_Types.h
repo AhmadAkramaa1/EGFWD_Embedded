@@ -2,33 +2,24 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  Compiler.h
+ *         File:  SysTick_Types.h
  *       Module:  -
  *
- *  Description:  Contains Compiler Dependent MACRO Definition     
+ *  Description:  <Write File DESCRIPTION here>     
  *  
  *********************************************************************************************************************/
-#ifndef COMPILER_H
-#define COMPILER_H
+#ifndef SYSTICK_TYPES_H
+#define SYSTICK_TYPES_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
-
+#include "SysTick_Cfg.h"
 
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
-/* NULL_PTR define with a void pointer to zero definition*/
-#define NULL       ((void *)0)
 
-/* INLINE  define for abstraction of the keyword inline*/
-#define INLINE         inline
-
-/* LOCAL_INLINE define for abstraction of the keyword inline in functions with "static" scope.
-   Different compilers may require a different sequence of the keywords "static" and "inline" 
-   if this is supported at all. */
-#define LOCAL_INLINE   static inline
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
@@ -38,20 +29,45 @@
 /**********************************************************************************************************************
  *  GLOBAL DATA TYPES AND STRUCTURES
  *********************************************************************************************************************/
+typedef enum
+{
+	PIOSC_DIVBY_4 = 0,
+	SYSTEM_CLK
+	
+}SysTick_ClkSrc_Type;
+
+
+typedef enum
+{
+	INTR_DISABLED = 0,
+	INTR_ENABLED 
+	
+}SysTick_INTR_Type;
+
+
+typedef u32 Timer_Value_Type;
+
+
+typedef struct
+{
+	SysTick_ClkSrc_Type SysTick_ClkSrc;
+	SysTick_INTR_Type   SysTick_INTR;
+}SysTick_Cfg_type;
 
 
 /**********************************************************************************************************************
  *  GLOBAL DATA PROTOTYPES
  *********************************************************************************************************************/
 
+extern SysTick_Cfg_type SysStrCfg;
  
 /**********************************************************************************************************************
- *  GLOBAL FUNCTION PROTOTYPES
+ *  PRIVATE FUNCTION PROTOTYPES
  *********************************************************************************************************************/
 
  
-#endif  /* COMPILER_H */
+#endif  /* SYSTICK_TYPES_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: Std_Types.h
+ *  END OF FILE: SysTick_Types.h
  *********************************************************************************************************************/
